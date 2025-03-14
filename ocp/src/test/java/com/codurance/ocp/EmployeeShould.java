@@ -1,8 +1,8 @@
 package com.codurance.ocp;
 
-import org.junit.jupiter.api.Test;
+import static org.assertj.core.api.Assertions.*;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import org.junit.jupiter.api.Test;
 
 class EmployeeShould {
 
@@ -11,16 +11,16 @@ class EmployeeShould {
 
     @Test
     public void not_add_bonus_to_the_engineer_pay_amount() {
-        Employee employee = new Employee(SALARY, BONUS, EmployeeType.ENGINEER);
-        assertThat(employee.payAmount())
+        Engineer engineer = new Engineer(SALARY);
+        assertThat(engineer.payAmount())
                 .isEqualTo(SALARY);
     }
 
 
     @Test
     public void add_bonus_to_the_manager_pay_amount() {
-        Employee employee = new Employee(SALARY, BONUS, EmployeeType.MANAGER);
-        assertThat(employee.payAmount())
+        Manager manager = new Manager(SALARY, BONUS);
+        assertThat(manager.payAmount())
                 .isEqualTo(SALARY+BONUS);
     }
 }
