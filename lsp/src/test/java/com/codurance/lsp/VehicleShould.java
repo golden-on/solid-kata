@@ -1,8 +1,8 @@
 package com.codurance.lsp;
 
-import org.junit.jupiter.api.Test;
+import static org.assertj.core.api.Assertions.*;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import org.junit.jupiter.api.Test;
 
 public class VehicleShould {
   @Test
@@ -28,7 +28,7 @@ public class VehicleShould {
   }
 
 
-  public class TestableVehicle extends Vehicle{
+  public class TestableVehicle extends Vehicle implements Chargable, Fuellable {
 
     @Override
     public void fillUpWithFuel() {
