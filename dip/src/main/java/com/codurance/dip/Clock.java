@@ -2,8 +2,10 @@ package com.codurance.dip;
 
 import java.time.MonthDay;
 
-public class Clock {
-    public MonthDay monthDay(){
+public class Clock implements ToDayable {
+
+    @Override
+    public MonthDay monthDay() {
         return MonthDay.now();
     }
 }
